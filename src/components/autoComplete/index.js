@@ -49,7 +49,7 @@ const useStyles = makeStyles(theme => ({
 
 const AutoComplete = (props) => {
 
-    const { suggestions, onChangeText, onChangeSelection, text } = props;
+    const { suggestions , onChangeText, onChangeSelection, text } = props;
     const classes = useStyles();
     const [ isOpen, setIsOpen ] = React.useState(false);
 
@@ -94,16 +94,17 @@ const AutoComplete = (props) => {
         />
         {isOpen &&
         <Paper className="container-results" square>
-            {suggestions.map(suggestion =>
+
+            {suggestions.map((suggestion,key) =>
             <MenuItem
-                key={suggestion.id}
+                key={key}
                 component="li"
                 onClick={() => {
-                    onChangeSelection(suggestion.title);
+                    onChangeSelection(suggestion.name);
                     setIsOpen(false);
                 }}
             >
-                {suggestion.title}
+                {suggestion.name}
             </MenuItem>)}
         </Paper>}
         </div>

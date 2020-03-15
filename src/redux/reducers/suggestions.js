@@ -1,17 +1,11 @@
-const defaultState = [{
-    id: 1,
-    title:"hola"
-}];
+const defaultState = [];
 
 
-function reducer(state = defaultState, { type, payload }){
+function reducer(state = defaultState, { type, suggestions }){
     switch(type){
-        case 'findSuggestions': {
-            return [{
-                id: 1,
-                title: "Ejemplo"
-            }]
-        }
+
+        case 'findSuggestions':
+            return suggestions.docs
         default:
             return state;
     }

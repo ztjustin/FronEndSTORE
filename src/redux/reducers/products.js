@@ -1,13 +1,11 @@
-const defaultState = 23;
+const defaultState = [];
 
 
 function reducer(state = defaultState, { type, products }){
     switch(type){
+        
         case 'getAllProducts':
-            return {
-                ...state,
-                products: products
-            }
+            return products
         default:
             return state;
     }
